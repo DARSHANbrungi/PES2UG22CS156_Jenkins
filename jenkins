@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Starting Build Stage'
-                sh 'echo Build simulation'
+                sh 'g++ -o YOUR_SRN-1 your_file.cpp' // Compiling the C++ file
                 echo 'Build Stage Successful'
             }
         }
@@ -13,7 +13,7 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Running Tests'
-                sh 'echo Test simulation - No mvn required'
+                sh './YOUR_SRN-1' // Executing the compiled C++ program
                 echo 'Test Stage Successful'
             }
             post {
@@ -26,7 +26,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying Application'
-                sh 'echo Deploy simulation'
+                sh 'echo Deploy simulation' // Placeholder for actual deployment
                 echo 'Deployment Successful'
             }
         }
@@ -41,4 +41,3 @@ pipeline {
         }
     }
 }
-    
